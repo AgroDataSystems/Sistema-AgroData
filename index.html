@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Envelope Animado com Corações</title>
+    <link rel="stylesheet" href="love.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <p class="text">
+              ​ Feliz aniversário de namoro Pretinha! Te amo muito muito! Mesmo
+              nos dias ruins, sua simples presença revigora minha alma de
+              felicidade. Não é muito, mas é de coração. Te amo em todos os
+              universos, e simplesmente é você quem faz meu coração bater. 💖💞
+            </p>
+            <p class="text1">Assinado: lipe 🌻</p>
+            <p class="text2">14/09/2024</p>
+          </div>
+          <div class="heart"></div>
+        </div>
+      </div>
+
+      <img src="rev.png" class="img" alt="Imagem à direita" />
+      <img
+        src="WhatsApp Image 2024-09-14 at 02.32.41 (1)_preview_rev_1.png"
+        class="imag1"
+        alt="Imagem à esquerda"
+      />
+
+      <!-- Corações Flutuantes -->
+      <div class="floating-hearts"></div>
+    </div>
+
+    <script>
+      // Animação ao clicar no coração
+      document.querySelector(".heart").addEventListener("click", function () {
+        document.querySelector(".envelope-wrapper").classList.toggle("flap");
+
+        // Criar corações flutuantes
+        const floatingHeartsContainer =
+          document.querySelector(".floating-hearts");
+        for (let i = 0; i < 10; i++) {
+          const heart = document.createElement("div");
+          heart.classList.add("floating-heart");
+          heart.style.left = `${Math.random() * 100}%`; // Posição aleatória
+          floatingHeartsContainer.appendChild(heart);
+
+          // Remover o coração após a animação
+          setTimeout(() => {
+            heart.remove();
+          }, 3000);
+        }
+      });
+    </script>
+  </body>
+</html>
